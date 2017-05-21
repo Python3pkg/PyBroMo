@@ -41,15 +41,15 @@ def get_bromo_fnames_da(d_em_kHz, d_bg_kHz, a_em_kHz, a_bg_kHz,
     E_sim = 1.*a_em_kHz/(a_em_kHz + d_em_kHz)
 
     FRET_val = 100.*E_sim
-    print("Simulated FRET value: %.1f%%" % FRET_val)
+    print(("Simulated FRET value: %.1f%%" % FRET_val))
 
     d_em_kHz_str = "%04d" % d_em_kHz
     a_em_kHz_str = "%04d" % a_em_kHz
     d_bg_kHz_str = "%04.1f" % d_bg_kHz
     a_bg_kHz_str = "%04.1f" % a_bg_kHz
 
-    print("D: EM %s BG %s " % (d_em_kHz_str, d_bg_kHz_str))
-    print("A: EM %s BG %s " % (a_em_kHz_str, a_bg_kHz_str))
+    print(("D: EM %s BG %s " % (d_em_kHz_str, d_bg_kHz_str)))
+    print(("A: EM %s BG %s " % (a_em_kHz_str, a_bg_kHz_str)))
 
     fname_d = ('ph_times_{t_tot}s_D{D}_{np}P_{pM}pM_'
                'step{ts_us}us_ID{ID}_EM{em}kHz_BG{bg}kHz.npy').format(

@@ -107,21 +107,21 @@ class mToolQT(object):
                 bin_w = self.bin_spinbox.value(),
                 t_max = self.tmax_spinbox.value())
         if array([new[p] == old[p] for p in new]).all():
-            print "all same"
+            print("all same")
             return
         #print new
         
         if new['t_max'] > self.time_max:
             self.tmax_spinbox.setValue(self.time_max)
             self.save_params()
-            print "t_max too large"
+            print("t_max too large")
             return
 
         bins = self.f_kwargs['bins']
         if new['bin_w'] <= 0 or new['bin_w'] >= 0.5*bins.max():
             self.bin_spinbox.setValue(old['bin_w'])
             self.save_params()
-            print "bins out of range"
+            print("bins out of range")
             return
         bins = arange(bins.min(),bins.max()+new['bin_w'],new['bin_w'])
         

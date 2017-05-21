@@ -74,7 +74,7 @@ class EmissionPlotter(ScrollPlotter):
     def __init__(self, S, particles=None, color_pop=True,
                  duration=0.01, decimate=100):
         if particles is None:
-            particles = range(S.num_particles)
+            particles = list(range(S.num_particles))
         self.particles = particles
         self.color_pop = color_pop
         self.S = S
@@ -137,7 +137,7 @@ class TrackEmPlotterR(ScrollPlotter):
     def __init__(self, S, particles=None, color_pop=True,
                  duration=0.01, decimate=100):
         if particles is None:
-            particles = range(S.num_particles)
+            particles = list(range(S.num_particles))
         self.particles = particles
         self.S = S
         self.position = S.position
@@ -228,7 +228,7 @@ class TrackEmPlotter(ScrollPlotter):
     def __init__(self, S, particles=None, color_pop=True,
                  duration=0.01, decimate=100):
         if particles is None:
-            particles = range(S.num_particles)
+            particles = list(range(S.num_particles))
         self.particles = particles
         self.S = S
         self.position = S.position

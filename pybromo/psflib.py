@@ -19,6 +19,7 @@ import scipy.interpolate as SI
 import numexpr as NE
 import numpy as np
 import hashlib
+import collections
 
 
 class GaussianPSF:
@@ -121,7 +122,7 @@ class NumericPSF:
         """Return an hash string computed on the PSF data."""
         hash_list = []
         for key, value in sorted(self.__dict__.items()):
-            if not callable(value):
+            if not isinstance(value, collections.Callable):
                 if isinstance(value, np.ndarray):
                     hash_list.append(value.tostring())
                 else:

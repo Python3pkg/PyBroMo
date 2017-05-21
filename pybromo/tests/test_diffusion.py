@@ -76,7 +76,7 @@ def test_Particles():
     P = pbm.Particles(num_particles=20, D=D1, box=box, rs=rs)
     P.add(num_particles=15, D=D2)
 
-    Di, counts = zip(*P.diffusion_coeff_counts)
+    Di, counts = list(zip(*P.diffusion_coeff_counts))
     rs2 = np.random.RandomState()
     rs2.set_state(P.init_random_state)
     P2_list = pbm.Particles._generate(num_particles=counts[0], D=Di[0],

@@ -8,6 +8,7 @@ Legacy functions not used in recent versions.
 """
 
 import numpy as np
+from functools import reduce
 
 
 def parallel_gen_timestamps(dview, max_em_rate, bg_rate):
